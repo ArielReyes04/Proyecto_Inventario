@@ -1,0 +1,41 @@
+# ==========================================
+# REGLAS GLOBALES Y DE EDITORES
+# ==========================================
+**/node_modules/
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.iml
+.classpath
+.project
+.settings/
+.factorypath
+
+# ==========================================
+# REGLAS PARA EL FRONTEND (Angular)
+# ==========================================
+**/dist/
+**/.angular/
+**/tmp/
+
+# ==========================================
+# REGLAS PARA EL BACKEND (Spring Boot)
+# ==========================================
+# Compilación de Maven y Gradle
+**/target/
+**/build/
+**/.gradle/
+**/out/
+
+# Archivos de log y reportes de ejecución
+**/log/
+*.log
+
+# ARCHIVOS SENSIBLES (Crucial para DevSecOps)
+# Aquí evitamos que se filtren contraseñas de la base de datos de Kaños
+**/src/main/resources/application-local.properties
+**/src/main/resources/application-local.yml
+**/src/main/resources/application.yml
+**/.env
