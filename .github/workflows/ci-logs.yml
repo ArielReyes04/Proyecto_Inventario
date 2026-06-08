@@ -57,16 +57,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-          cache-dependency-path: '**/package.json'
-
+          
       - name: Log - Instalando Dependencias de Angular
         run: echo "--- LOG INTERNO:[INSTALANDO NODE_MODULES DEL FRONTEND] ---"
 
       - name: Instalar paquetes de Node
         run: |
           cd frontend
-          # Instala de manera limpia y estricta según tu package-lock.json
           npm install
 
       - name: Log - Compilando en Modo Producción
