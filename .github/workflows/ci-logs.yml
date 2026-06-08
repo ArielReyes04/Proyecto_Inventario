@@ -18,10 +18,10 @@ jobs:
       - name: Descargar código del repositorio
         uses: actions/checkout@v4
 
-      - name: Configurar Entorno Java JDK 17
+      - name: Configurar Entorno Java JDK 21
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: 'temurin'
           # Cache automático de Maven para acelerar futuras ejecuciones
           cache: 'maven'
