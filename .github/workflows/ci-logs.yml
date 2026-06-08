@@ -66,6 +66,15 @@ jobs:
           cd frontend
           npm install
 
+      - name: Log - Preparando entorno (DevSecOps)
+        run: echo "--- LOG INTERNO:[COPIANDO ARCHIVO DE ENTORNO DE EJEMPLO PARA PERMITIR COMPILACIÓN] ---"
+
+      - name: Preparar environment.ts
+        run: |
+          cd frontend
+          cp src/environments/environment.example.ts src/environments/environment.ts
+          cp src/environments/environment.example.ts src/environments/environment.prod.ts
+
       - name: Log - Compilando en Modo Producción
         run: echo "--- LOG INTERNO:[INICIANDO PRUEBA DE BUILD DE ANGULAR] ---"
 
