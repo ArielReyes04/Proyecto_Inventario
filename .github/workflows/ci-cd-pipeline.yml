@@ -41,6 +41,20 @@ jobs:
     name: Ejecutar Pruebas de Software
     needs: promote-to-test
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: 12345
+          POSTGRES_DB: bd-usuarios
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
     steps:
       - name: Descargar código de la rama Test
         uses: actions/checkout@v4
